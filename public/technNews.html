@@ -20,7 +20,7 @@
                 .then(data =>{
                     data.articles.forEach(article => {
                         const content =`
-                        <h3>${article.title}</h3><br>
+                        <h3 >${article.title}</h3><br>
                         <img src="${article.urlToImage}" alt="Article Image" style="width:200px;height:200px;margin:20px">
                         <br><p>${article.description}</p>`;
                         document.querySelector(`.tech`).insertAdjacentHTML('beforeend',content)
