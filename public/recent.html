@@ -19,11 +19,14 @@
             })
             .then(data =>{
                 data.articles.forEach(article => {
-                    const content =`
-                    <h3>${article.title}</h3><br>
-                    <img src="${article.urlToImage}" alt="Article Image" style="width:200px;height:200px;margin:20px">
-                    <br><p>${article.description}</p>`;
-                    document.querySelector(`.recent`).insertAdjacentHTML('beforeend',content)
+                    if(article.title!=="[Removed]" && article.description !== null)
+                    {
+                        const content =`
+                            <h3>${article.title}</h3><br>
+                            <img src="${article.urlToImage}" alt="Article Image" style="width:200px;height:200px;margin:20px">
+                            <br><p>${article.description}</p>`;
+                        document.querySelector(`.recent`).insertAdjacentHTML('beforeend',content)
+                    }
                 });
             })
         </script>
